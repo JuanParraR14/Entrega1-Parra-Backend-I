@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1768506864939",
+    "status": true,
+    "title": "Teclado mecánico",
+    "description": "Teclado RGB switch blue",
+    "code": "TEC123",
+    "price": 250000,
+    "stock": 10,
+    "category": "Periféricos",
+    "thumbnails": [
+      "img1.jpg",
+      "img2.jpg"
+    ]
+  }
+]
