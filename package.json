@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/JuanParraR14/Entrega1-Parra-Backend-I#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "express-handlebars": "^8.0.4",
+    "socket.io": "^4.8.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"
