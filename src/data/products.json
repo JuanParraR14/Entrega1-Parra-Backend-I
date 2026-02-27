@@ -1,25 +1,22 @@
 [
   {
-    "id": "1768506864939",
-    "status": true,
-    "title": "Teclado mecánico",
-    "description": "Teclado RGB switch blue",
-    "code": "TEC123",
-    "price": 250000,
-    "stock": 10,
-    "category": "Periféricos",
-    "thumbnails": [
-      "img1.jpg",
-      "img2.jpg"
-    ]
-  },
-  {
     "id": "1772154145449",
     "status": true,
     "title": "Mouse Gamer",
     "price": "350000",
     "description": "Sin descripción",
     "code": "1772154145447",
+    "stock": 10,
+    "category": "General",
+    "thumbnails": []
+  },
+  {
+    "id": "1772156151640",
+    "status": true,
+    "title": "Teclado Mécanico",
+    "price": "250000",
+    "description": "Sin descripción",
+    "code": "1772156151639",
     "stock": 10,
     "category": "General",
     "thumbnails": []

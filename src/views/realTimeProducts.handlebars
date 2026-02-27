@@ -16,7 +16,8 @@
 <ul id="productList">
    {{#each products}}
       <li>
-         {{this.title}} - ${{this.price}} (ID: {{this.id}})
+         {{this.title}} - ${{this.price}}
+         <button onclick="deleteProduct('{{this.id}}')">Eliminar</button>
       </li>
    {{/each}}   
 </ul>

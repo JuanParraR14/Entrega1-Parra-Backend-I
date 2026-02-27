@@ -27,12 +27,19 @@ deleteBtn.addEventListener("click", () => {
    socket.emit("deleteProduct", id);
 });
 
+function deleteProduct(id) {
+   socket.emit("deleteProduct", id);
+}
+
 socket.on("updateProducts", (products) => {
    productList.innerHTML = "";
 
    products.forEach(p => {
       const li = document.createElement("li");
-      li.textContent = `${p.title} - $${p.price} (ID: ${p.id})`;
+      li.innerHTML = `
+         ${p.title} - $${p.price}
+         <button onclick="deleteProduct('${p.id}')">Eliminar</button>
+      `;
       productList.appendChild(li);
    });
 });

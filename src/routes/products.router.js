@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { io } from "../app.js";
 import ProductManager from "../managers/ProductManager.js";
 
 const router = Router();
@@ -17,6 +18,10 @@ router.get("/:pid", async (req, res) => {
 
 router.post("/", async (req, res) => {
    const newProduct = await productManager.addProduct(req.body);
+   
+   const products = await productManager.getProducts();
+   io.emit("updateProducts", products);
+
    res.status(201).json(newProduct);
 });
 
@@ -28,6 +33,10 @@ router.put("/:pid", async (req, res) => {
 
 router.delete("/:pid", async (req, res) => {
    await productManager.deleteProduct(req.params.pid);
+
+   const products = await productManager.getProducts();
+   io.emit("updateProducts", products);
+
    res.json({ message: "Producto eliminado" });
 });
 

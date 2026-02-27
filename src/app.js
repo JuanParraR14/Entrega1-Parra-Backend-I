@@ -15,7 +15,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const httpServer = createServer(app);
-const io = new Server(httpServer);
+export const io = new Server(httpServer);
 
 const PORT = 8080;
 const productManager = new ProductManager("./src/data/products.json"); 
