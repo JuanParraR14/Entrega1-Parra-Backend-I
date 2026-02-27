@@ -18,7 +18,7 @@ const httpServer = createServer(app);
 const io = new Server(httpServer);
 
 const PORT = 8080;
-const productManager = new ProductManager("./src/data/products.json");
+const productManager = new ProductManager("./src/data/products.json"); 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

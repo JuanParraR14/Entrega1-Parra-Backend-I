@@ -12,5 +12,16 @@
       "img1.jpg",
       "img2.jpg"
     ]
+  },
+  {
+    "id": "1772154145449",
+    "status": true,
+    "title": "Mouse Gamer",
+    "price": "350000",
+    "description": "Sin descripción",
+    "code": "1772154145447",
+    "stock": 10,
+    "category": "General",
+    "thumbnails": []
   }
 ]
