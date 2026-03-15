@@ -4,11 +4,13 @@ import { createServer } from "http";
 import path from "path";
 import { Server } from "socket.io";
 import { fileURLToPath } from "url";
+import { connectDB } from "./config/db.js";
 
-
+import dotenv from "dotenv";
 import ProductManager from "./managers/ProductManager.js";
 import cartsRouter from "./routes/carts.router.js";
 import productsRouter from "./routes/products.router.js";
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -62,6 +64,8 @@ io.on("connection", (socket) => {
       io.emit("updateProducts", products);
    });
 });
+
+connectDB();
 
 httpServer.listen(PORT, () => {
    console.log(`Servidor escuchando en puerto ${PORT}`);

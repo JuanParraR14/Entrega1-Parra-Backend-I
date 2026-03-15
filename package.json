@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/JuanParraR14/Entrega1-Parra-Backend-I#readme",
   "dependencies": {
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "express-handlebars": "^8.0.4",
     "mongoose": "^9.3.0",
