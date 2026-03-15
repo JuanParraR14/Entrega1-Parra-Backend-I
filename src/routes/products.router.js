@@ -4,8 +4,10 @@ import Product from "../models/Product.js";
 
 const router = Router();
 
+//  GET /api/products  Query params:
 router.get("/", async (req, res) => {
    try {
+
       const { limit = 10, page = 1, sort, query } = req.query;
 
       const options = {
@@ -58,6 +60,7 @@ router.get("/", async (req, res) => {
    }
 });
 
+// GET producto por ID
 router.get("/:pid", async (req, res) => {
    try {
 
@@ -74,8 +77,10 @@ router.get("/:pid", async (req, res) => {
    }
 });
 
+// POST crear producto
 router.post("/", async (req, res) => {
    try {
+      
       const newProduct = await Product.create(req.body);
 
       const products = await Product.find().lean();
@@ -88,6 +93,7 @@ router.post("/", async (req, res) => {
    }
 });
 
+// PUT actualizar producto
 router.put("/:pid", async (req, res) => {
    try {
 
@@ -108,6 +114,7 @@ router.put("/:pid", async (req, res) => {
    }
 });
 
+// DELETE producto
 router.delete("/:pid", async (req, res) => {
    try {
 
