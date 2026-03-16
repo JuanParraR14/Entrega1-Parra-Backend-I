@@ -10,6 +10,8 @@ import dotenv from "dotenv";
 import ProductManager from "./managers/ProductManager.js";
 import cartsRouter from "./routes/carts.router.js";
 import productsRouter from "./routes/products.router.js";
+import viewsRouter from "./routes/views.router.js";
+
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -36,6 +38,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // Rutas API
 app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
+app.use("/", viewsRouter);
 
 //Router de Vistas
 app.get("/", async (req, res) => {

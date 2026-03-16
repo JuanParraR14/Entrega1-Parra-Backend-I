@@ -1,0 +1,46 @@
+<h1>Carrito</h1>
+
+{{#if products.length}}
+
+<ul>
+
+{{#each products}}
+
+<li>
+   <span>
+      {{this.product.title}} -
+      ${{this.product.price}} -
+      Cantidad: {{this.quantity}}
+   </span>
+</li>
+
+{{/each}}
+
+</ul>
+
+<button class="cart-button" onclick="clearCart()">
+   Vaciar carrito
+</button>
+
+<a href="/products">Volver</a>
+
+{{else}}
+
+<p class="empty-cart">El carrito está vacío</p>
+
+{{/if}}
+
+<script>
+
+const cartId = "69b72a2a9dadc30f9be08cf9"; // ID de carrito creado con POST
+
+async function clearCart(){
+
+   await fetch(`/api/carts/${cartId}`, {
+      method: "DELETE"
+   });
+
+   location.reload();
+}
+
+</script>

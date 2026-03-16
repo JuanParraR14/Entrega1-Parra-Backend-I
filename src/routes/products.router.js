@@ -91,6 +91,13 @@ router.post("/", async (req, res) => {
    } catch (error) {
       res.status(500).json({ error: error.message });
    }
+
+   if (!req.body.title || !req.body.price || !req.body.code) {
+      return res.status(400).json({
+         status: "error",
+         error: "Faltan campos obligatorios"
+      });
+   }
 });
 
 // PUT actualizar producto

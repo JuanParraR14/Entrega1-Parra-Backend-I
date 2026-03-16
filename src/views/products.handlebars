@@ -1,0 +1,34 @@
+<h1>Productos</h1>
+
+<ul>
+
+{{#each products}}
+
+<li>
+   <span>
+      <strong>{{this.title}}</strong> - ${{this.price}}
+   </span>
+
+   <a href="/products/{{this._id}}">
+      Ver Detalle
+   </a>
+
+</li>
+
+{{/each}}
+
+</ul>
+
+<div class="pagination">
+
+{{#if hasPrevPage}}
+   <a href="/products?page={{prevPage}}">Anterior</a>
+{{/if}}
+
+<span>Página {{page}}</span>
+
+{{#if hasNextPage}}
+   <a href="/products?page={{nextPage}}">Siguiente</a>
+{{/if}}
+
+</div>
